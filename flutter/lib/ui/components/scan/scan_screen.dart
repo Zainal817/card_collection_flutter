@@ -61,7 +61,6 @@ class _ScanScreenState extends State<ScanScreen>
 
   Future<void> _capture() async {
 
-    print(await widget.api.identifyCard(File(picture.path)));
     if (_controller == null || !_controller!.value.isInitialized) return;
 
     final picture = await _controller!.takePicture();

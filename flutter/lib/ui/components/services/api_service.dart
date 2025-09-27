@@ -13,7 +13,7 @@ class ApiService {
     final streamed = await request.send();
     final resp = await http.Response.fromStream(streamed);
     if (resp.statusCode != 200) throw Exception(resp.body);
-    return json.decode(resp.body);  
+    return json.decode(resp.body);
   }
 
   Future<List<dynamic>> getCollections() async {
