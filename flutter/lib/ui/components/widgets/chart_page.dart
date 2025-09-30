@@ -71,7 +71,6 @@ class ChartPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 18),
 
-                      // Price pill row
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
                         decoration: BoxDecoration(
