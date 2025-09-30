@@ -195,7 +195,7 @@ class HotOpportunityCard extends StatelessWidget {
             ),
           ),
 
-          const Spacer(), // ✅ Works because card has fixed height
+          const Spacer(),
 
           SizedBox(
             width: double.infinity,
@@ -239,7 +239,6 @@ class BestPerformerCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Header
           const Text(
             "Your Best Performer",
             style: TextStyle(
@@ -389,7 +388,6 @@ class _ProgressCard extends StatelessWidget {
   }
 }
 
-/* --------------------------- Chips Row (circle chips with labels below) --------------------------- */
 class BottomChipsRow extends StatelessWidget {
   const BottomChipsRow({super.key});
 
@@ -437,7 +435,6 @@ class CircleChip extends StatelessWidget {
   }
 }
 
-/* --------------------------- Bottom navigation row (rectangular buttons with icons + labels) --------------------------- */
 class BottomNavRow extends StatelessWidget {
   const BottomNavRow({super.key});
 
@@ -531,7 +528,7 @@ class BottomNavRow extends StatelessWidget {
         ),
         );
     }
-    }
+}
 
 class RecentActivityCard extends StatelessWidget {
   const RecentActivityCard({super.key});
