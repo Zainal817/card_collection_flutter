@@ -7,7 +7,6 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bottomPad = MediaQuery.of(context).padding.bottom;
-    // total bottom area height = chips area (84) + divider (1) + nav (70) + bottomPad
     final bottomAreaHeight = 84 + 1 + 70 + bottomPad;
 
     return Scaffold(
@@ -17,7 +16,6 @@ class LandingPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 12),
           child: Column(
             children: [
-              // Top stats row
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
                 child: Row(
@@ -50,7 +48,6 @@ class LandingPage extends StatelessWidget {
 
               const SizedBox(height: 8),
 
-              // Two cards row + progress card below
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
@@ -62,7 +59,6 @@ class LandingPage extends StatelessWidget {
                 ),
               ),
 
-              // filler space so content is above bottom area
               SizedBox(height: 12),
 
               Padding(
@@ -89,28 +85,6 @@ class LandingPage extends StatelessWidget {
           ),
         ),
       ),
-
-      // Unified bottom area (chips row + divider + nav row) with fixed height
-    //   bottomNavigationBar: SafeArea(
-    //     child: SizedBox(
-    //       height: 172, // 👈 give enough height for chips + nav bar
-    //       child: Column(
-    //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //         children: const [
-    //           BottomChipsRow(),
-    //           Divider(height: 1, color: Colors.white24),
-    //           Expanded(
-    //             child: Padding(
-    //               padding: const EdgeInsets.only(top: 8.0),
-    //               child: BottomNavRow(),
-    //             ),
-    //           ),
-    //           RecentActivityCard()
-    //         ],
-    //       ),
-    //     ),
-    //   ),
-
     );
   }
 }
