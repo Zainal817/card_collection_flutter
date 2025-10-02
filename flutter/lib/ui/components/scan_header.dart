@@ -70,7 +70,8 @@ class _ScanHeaderState extends State<ScanHeader>
             radius: coreSize * 0.95,
             startAngle: -0.45,
             text: "TAP TO SCAN",
-            textStyle: Theme.of(context).textTheme.labelLarge?.copyWith(
+            textStyle:
+                Theme.of(context).textTheme.labelLarge?.copyWith(
                   letterSpacing: 2,
                   fontWeight: FontWeight.w600,
                   color: Colors.black87.withOpacity(0.85),
@@ -94,7 +95,6 @@ class _ScanHeaderState extends State<ScanHeader>
             child: Stack(
               alignment: Alignment.center,
               children: [
-                // Animated rings (drawn as bordered circles that grow & fade)
                 for (var i = 0; i < rings; i++)
                   AnimatedBuilder(
                     animation: _controller,
@@ -104,7 +104,9 @@ class _ScanHeaderState extends State<ScanHeader>
                       final size = ringMin + eased * (ringMax - ringMin);
                       final opacity = (1.0 - eased).clamp(0.0, 1.0);
                       // subtle scale jitter to avoid perfect linear cycle
-                      final jitter = 1.0 + 0.02 * sin((_controller.value + i * 0.35) * 2 * pi);
+                      final jitter =
+                          1.0 +
+                          0.02 * sin((_controller.value + i * 0.35) * 2 * pi);
                       return SizedBox(
                         width: size * jitter,
                         height: size * jitter,
@@ -121,7 +123,6 @@ class _ScanHeaderState extends State<ScanHeader>
                     },
                   ),
 
-                // Optional faint concentric thin rings for structure (static)
                 for (var d in [0.72, 1.08, 1.36])
                   SizedBox(
                     width: coreSize * d,
@@ -134,14 +135,14 @@ class _ScanHeaderState extends State<ScanHeader>
                     ),
                   ),
 
-                // Animated glowing core
                 AnimatedBuilder(
                   animation: _controller,
                   builder: (context, child) {
                     // subtle breathing animation using sin
                     final t = _controller.value;
                     final pulse = 1.0 + 0.035 * sin(t * 2 * pi * 1.5);
-                    final glowAlpha = 0.35 + 0.15 * (0.5 + 0.5 * sin(t * 2 * pi));
+                    final glowAlpha =
+                        0.35 + 0.15 * (0.5 + 0.5 * sin(t * 2 * pi));
                     return Transform.scale(
                       scale: pulse,
                       child: Container(
@@ -190,17 +191,17 @@ class _ScanHeaderState extends State<ScanHeader>
         // Scan stats text
         Text(
           '8/10 daily scans',
-          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: Colors.white70,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.bodySmall?.copyWith(color: Colors.white70),
         ),
         const SizedBox(height: 4),
         Text(
           '2 scans until BONUS ROUND!',
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: Colors.pinkAccent,
-                fontWeight: FontWeight.w700,
-              ),
+            color: Colors.pinkAccent,
+            fontWeight: FontWeight.w700,
+          ),
         ),
         const SizedBox(height: 12),
       ],
