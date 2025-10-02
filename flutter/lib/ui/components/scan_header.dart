@@ -1,4 +1,3 @@
-// lib/ui/components/scan/scan_header.dart
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_arc_text/flutter_arc_text.dart';
@@ -19,11 +18,9 @@ class ScanHeader extends StatefulWidget {
   State<ScanHeader> createState() => _ScanHeaderState();
 }
 
-class _ScanHeaderState extends State<ScanHeader>
-    with SingleTickerProviderStateMixin {
+class _ScanHeaderState extends State<ScanHeader> with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
 
-  // Visual tuning constants — tweak to taste
   static const double coreSize = 140.0;
   static const double coreDot = 18.0;
   static const double ringMin = 28.0;
@@ -62,8 +59,6 @@ class _ScanHeaderState extends State<ScanHeader>
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Arc text above the circle
-        // Uses flutter_arc_text package (ensure it's in your pubspec)
         Transform.translate(
           offset: const Offset(0, 24),
           child: ArcText(
